@@ -1,18 +1,18 @@
-import React, { useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 
-const Modal = ({ isOpen, onClose }) => {
+const Modal = ({ showModal, onClose }) => {
   const myRef = useRef(false);
 
   useEffect(() => {
-    if (isOpen && myRef.current) {
+    if (showModal && myRef.current) {
       myRef.current.showModal();
-    } else if (!isOpen && myRef.current) {
+    } else if (!showModal && myRef.current) {
       myRef.current.close();
     }
-  }, [isOpen, myRef]);
+  }, [showModal, myRef]);
 
   return (
-    <dialog ref={myRef} className="modal p-32 rounded-2xl text-center">
+    <dialog ref={myRef} className="modal p-32 mx-56 rounded-2xl text-center">
       <p className="mb-9">
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia possimus
         velit sint obcaecati facere dolor optio, pariatur dolores suscipit

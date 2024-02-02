@@ -13,10 +13,13 @@ const App = () => {
   };
   return (
     <div className="flex items-center justify-center mt-16">
-      <button className="p-2 bg-slate-600 text-white rounded-lg" onClick={handleOpenModal}>
+      <button
+        className="p-3 bg-slate-600 text-white rounded-lg"
+        onClick={handleOpenModal}
+      >
         Open Modal
       </button>
-      <Modal isOpen={showModal} onClose={handleCloseModal} />
+      <Modal showModal={showModal} onClose={handleCloseModal} />
     </div>
   );
 };
